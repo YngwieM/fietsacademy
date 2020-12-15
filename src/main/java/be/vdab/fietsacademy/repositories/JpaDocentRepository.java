@@ -23,4 +23,9 @@ import java.util.Optional;
     public void create(Docent docent) {
         manager.persist(docent);
     }
+
+    @Override
+    public void delete(long id) {
+        findById(id).ifPresent(docent -> manager.remove(docent));
+    }
 }

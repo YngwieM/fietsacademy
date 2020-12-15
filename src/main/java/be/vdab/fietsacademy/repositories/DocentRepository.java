@@ -9,4 +9,6 @@ public interface DocentRepository {
 
     void create(Docent docent);
 
+    void delete(long id);
+
 }
