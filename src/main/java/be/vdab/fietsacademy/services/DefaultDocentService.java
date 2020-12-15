@@ -8,10 +8,10 @@ import javax.transaction.Transactional;
 import java.math.BigDecimal;
 @Service
 @Transactional
-class DefaultDocentService implements DocentService {
+ class DefaultDocentService implements DocentService {
     private final DocentRepository docentRepository;
 
-    DefaultDocentService(DocentRepository docentRepository) {
+    public DefaultDocentService(DocentRepository docentRepository) {
         this.docentRepository = docentRepository;
     }
 
