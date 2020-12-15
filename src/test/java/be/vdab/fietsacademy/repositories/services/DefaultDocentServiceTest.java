@@ -38,6 +38,7 @@ class DefaultDocentServiceTest {
         assertThat(docent.getWedde()).isEqualByComparingTo("110");
         verify(repository).findById(1);
     }
+
     @Test
     void opslagVoorOnbestaandeDocent() {
         assertThatExceptionOfType(DocentNietGevondenException.class)
