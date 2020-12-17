@@ -1,10 +1,9 @@
-package be.vdab.fietsacademy.repositories.services;
+package be.vdab.fietsacademy.services;
 
 import be.vdab.fietsacademy.domain.Docent;
 import be.vdab.fietsacademy.domain.Geslacht;
 import be.vdab.fietsacademy.exceptions.DocentNietGevondenException;
 import be.vdab.fietsacademy.repositories.DocentRepository;
-import be.vdab.fietsacademy.services.DefaultDocentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

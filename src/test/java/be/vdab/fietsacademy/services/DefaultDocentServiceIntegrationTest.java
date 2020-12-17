@@ -1,6 +1,5 @@
-package be.vdab.fietsacademy.repositories.services;
+package be.vdab.fietsacademy.services;
 
-import be.vdab.fietsacademy.services.DefaultDocentService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
