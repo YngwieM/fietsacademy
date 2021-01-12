@@ -3,6 +3,7 @@ package be.vdab.fietsacademy.domain;
 import javax.persistence.*;
 import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -58,5 +59,18 @@ public class Campus {
 
     public Set<TelefoonNr> getTelefoonNrs() {
         return Collections.unmodifiableSet(telefoonNrs);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Campus)) return false;
+        Campus campus = (Campus) o;
+        return Objects.equals(naam.toUpperCase(), campus.naam.toUpperCase());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(naam.toUpperCase());
     }
 }
