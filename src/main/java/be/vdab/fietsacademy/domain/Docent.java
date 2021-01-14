@@ -10,6 +10,16 @@ import java.util.Set;
 
 @Entity
 @Table(name = "docenten")
+@NamedEntityGraph(name = Docent.MET_CAMPUS,
+        attributeNodes = @NamedAttributeNode("campus"))
+@NamedEntityGraph(name = "Docent.metCampusEnVerantwoordelijkheden",
+        attributeNodes = {
+                @NamedAttributeNode("campus"), @NamedAttributeNode("verantwoordelijkheden")})
+//@NamedEntityGraph(name = "Docent.metCampusEnManager",                   // als je deze verwijderd werken alle testen wel, anders failed30, 25 passed bij mij
+//        attributeNodes = @NamedAttributeNode(value = "campus",
+//                subgraph = "metManager"),
+//        subgraphs = @NamedSubgraph(name = "metManager",
+//                attributeNodes = @NamedAttributeNode("manager")))
 public class Docent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +42,7 @@ public class Docent {
             mappedBy = "docenten")
     private Set<Verantwoordelijkheid> verantwoordelijkheden
             = new LinkedHashSet<>();
+    public static final String MET_CAMPUS = "Docent.metCampus";
 
     public Docent(String voornaam, String familienaam, BigDecimal wedde, String emailAdres, Geslacht geslacht, Campus campus) {
         this.voornaam = voornaam;

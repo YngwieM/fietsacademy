@@ -96,10 +96,12 @@ class JpaDocentRepositoryTest
         var duizend = BigDecimal.valueOf(1_000);
         var tweeduizend = BigDecimal.valueOf(2_000);
         var docenten = repository.findByWeddeBetween(duizend, tweeduizend);
+        manager.clear(); // extra code 23.1
         assertThat(docenten).hasSize(
                 super.countRowsInTableWhere(DOCENTEN, "wedde between 1000 and 2000"))
                 .allSatisfy(
                         docent -> assertThat(docent.getWedde()).isBetween(duizend, tweeduizend));
+        assertThat(docenten).extracting(docent -> docent.getCampus().getNaam());  //extra code 23.1
     }
 
     @Test
