@@ -15,11 +15,6 @@ import java.util.Set;
 @NamedEntityGraph(name = "Docent.metCampusEnVerantwoordelijkheden",
         attributeNodes = {
                 @NamedAttributeNode("campus"), @NamedAttributeNode("verantwoordelijkheden")})
-//@NamedEntityGraph(name = "Docent.metCampusEnManager",                   // als je deze verwijderd werken alle testen wel, anders failed30, 25 passed bij mij
-//        attributeNodes = @NamedAttributeNode(value = "campus",
-//                subgraph = "metManager"),
-//        subgraphs = @NamedSubgraph(name = "metManager",
-//                attributeNodes = @NamedAttributeNode("manager")))
 public class Docent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
